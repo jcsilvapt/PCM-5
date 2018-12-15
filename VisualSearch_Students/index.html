@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html>
+         <meta charset="UTF-8">
+		 <link rel="stylesheet" type="text/css" href="css/_style.css">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		 <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+         <script src="js/Image_Processing.js"></script>
+         <script src="js/XML_Database.js"></script>
+         <script src="js/ISearchEngine.js"></script>
+         <script src="js/ISearchEngine_Manager.js"></script>
+		 <title>Teste</title>
+	</html>
+	<body>
+		<div class="header"></div>
+		<div class="searchOptionsHolder">
+			<a href="index.html"><div class="linkHolder">Home</div></a>
+			<a href="#" onclick="setName('imagens')"><div class="linkHolder">Imagens</div></a>
+			<a href="#" onclick="setName('videos')"><div class="linkHolder">Video</div></a>
+			<a href="#" onclick="setName('audio')"><div class="linkHolder">Audio</div></a>
+		</div>
+		<div id="someTitle" class="logo">SEARCH ENGINE</div>
+		<div class="container">
+			<div class="searchCon">
+				<div id="toDrop" ondrop="drop(event)" ondragover="allowDrop(event)">
+					Drop here to Search related Images
+				</div>
+				<div id="searchTi">Searching</div>
+				<div id="loader"></div>
+					<input id="searchBar" type="search" placeholder="Pesquisar imagens..." name="search" />
+					<button id="searchSub" type="submit" onclick="checkSearch()"><i class="fa fa-search"></i></button>
+			</div>
+			<div id="results" class="containSearch">
+				<span class="resultT">Resultados:</span>
+			</div>
+		</div>
+        <div id="myModal" class="modal">
+            <span class="close">%times;</span>
+            <img class="modal-content" id="img01">
+        </div>
+        <canvas id="canvas" width="1100" height="1100" style="display: none;">
+            Your browser doesn't recognize the canvas element
+        </canvas>
+		<!--<img src="images/1.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">-->
+		<script>
+            window.onload = main();
+		</script>
+	</body>
+</html>
